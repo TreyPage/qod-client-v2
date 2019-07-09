@@ -7,11 +7,11 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.widget.TooltipCompat;
 import androidx.lifecycle.ViewModelProviders;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import edu.cnm.deepdive.qodclient.R;
 import edu.cnm.deepdive.qodclient.model.Quote;
 import edu.cnm.deepdive.qodclient.viewmodel.MainViewModel;
@@ -84,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
         .setMessage(quote.getCombinedText(getString(R.string.combined_quote_pattern),
             getString(R.string.source_delimiter), getString(R.string.unknown_source)))
         .setTitle(title)
-        .setNegativeButton(R.string.dialog_done, (dialogInterface, i) -> {});
+        .setNegativeButton(R.string.dialog_done, (dialogInterface, i) -> {
+        });
     if (nextAction != null) {
       builder.setPositiveButton(R.string.dialog_next, (dialogInterface, i) -> nextAction.run());
     }
